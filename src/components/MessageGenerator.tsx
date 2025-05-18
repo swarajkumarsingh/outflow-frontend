@@ -49,7 +49,7 @@ const MessageGenerator = () => {
       setGeneratedMessage(message);
       toast.success("Message generated successfully");
     } catch (error) {
-      toast.error("Failed to generate message");
+      console.log("Error");
     } finally {
       setIsLoading(false);
     }
@@ -132,6 +132,7 @@ const MessageGenerator = () => {
                 placeholder="Infosys"
                 name="company"
                 value={profile.company}
+                required
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               />
@@ -152,6 +153,7 @@ const MessageGenerator = () => {
                 placeholder="Mumbai, India"
                 value={profile.location}
                 onChange={handleChange}
+                required
                 className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
               />
             </div>
@@ -170,6 +172,7 @@ const MessageGenerator = () => {
                 name="summary"
                 rows={3}
                 value={profile.summary}
+                required
                 onChange={handleChange}
                 className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
               />
